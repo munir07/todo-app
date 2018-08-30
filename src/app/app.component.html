@@ -1,11 +1,10 @@
-<mat-toolbar color="primary">
-    <div fxLayoutAlign="space-between">
+<mat-toolbar color="primary" fxLayoutAlign="space-between">
         <div>
             <img src="/assets/logo.png" class="logo" alt="">
             <span>My TODOs</span>
         </div>
-        <mat-icon>menu</mat-icon>
-    </div>
+        <mat-icon class="logo">menu</mat-icon>
+   
 </mat-toolbar>
 
 <app-task-entry [taskList]="taskList"></app-task-entry>

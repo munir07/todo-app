@@ -11,7 +11,6 @@ export class TaskEntryComponent implements OnInit {
 
   @Input()
   taskList: any[];
-  // taskList: LineItem[];
 
   @ViewChild('MyToDoForm')
   theForm: NgForm;

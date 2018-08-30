@@ -8,8 +8,10 @@
       <!-- <mat-card-header>{{t.Description}}</mat-card-header> -->
       <mat-card-content>
         <h3>{{t.Description}}</h3>
-        <h5>{{t.Priority}}</h5>
-        <h5>{{t.Due.format('MM/DD/YYYY')}}</h5>
+        <div fxLayoutAlign="space-between">
+          <span>{{t.Priority}}</span>
+          <span>{{t.Due.format('MM/DD/YYYY')}}</span>
+        </div>
       </mat-card-content>
       <!-- <mat-card-actions>
         <button mat-button>LIKE</button>

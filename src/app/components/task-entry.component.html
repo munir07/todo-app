@@ -1,0 +1,38 @@
+<form #MyToDoForm="ngForm" (ngSubmit)=processForm()>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>New Task</mat-card-title>
+    </mat-card-header>
+    <div fxLayout="column" fxLayoutGap="15px">
+      <mat-form-field>
+        <input matInput name="Description" placeholder="Description" minlength=10 ngModel required>
+        <mat-error>
+          Please enter a description of at least 10 letters
+        </mat-error>
+      </mat-form-field>
+      <span>Priority:</span>
+      <mat-radio-group name="Priority" ngModel>
+        <mat-radio-button class="radio" value="High">High</mat-radio-button>
+        <mat-radio-button class="radio" value="Medium">Medium</mat-radio-button>
+        <mat-radio-button class="radio" value="Low">Low</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field>
+        <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="datepicker" placeholder="Due Date" ngModel name="Due" required>
+        <mat-datepicker-toggle matSuffix [for]="datepicker"></mat-datepicker-toggle>
+        <mat-datepicker #datepicker></mat-datepicker>
+      </mat-form-field>
+
+      <div class="button-row" fxLayoutAlign="end" fxLayoutGap="10px">
+        <button mat-raised-button color="accent" type="reset">
+            <mat-icon>clear</mat-icon>
+            <span>Clear</span>
+        </button>
+        <button mat-raised-button color="accent" type="submit" [disabled]="MyToDoForm.invalid">
+          <mat-icon>add_box</mat-icon>
+          <span>Add</span>
+        </button>
+      </div>
+    </div>
+  </mat-card>
+</form>

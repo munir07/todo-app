@@ -1,0 +1,19 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Tasks</mat-card-title>
+    </mat-card-header>
+
+    <!-- Loop thru items -->
+    <mat-card *ngFor="let t of taskList; let i=index">
+      <!-- <mat-card-header>{{t.Description}}</mat-card-header> -->
+      <mat-card-content>
+        <h3>{{t.Description}}</h3>
+        <h5>{{t.Priority}}</h5>
+        <h5>{{t.Due.format('MM/DD/YYYY')}}</h5>
+      </mat-card-content>
+      <!-- <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions> -->
+    </mat-card>
+</mat-card>
